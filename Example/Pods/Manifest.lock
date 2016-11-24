@@ -1,0 +1,16 @@
+PODS:
+  - BaseFramework (0.1.0)
+
+DEPENDENCIES:
+  - BaseFramework (from `../`)
+
+EXTERNAL SOURCES:
+  BaseFramework:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BaseFramework: 59aa5f7a472de3e41c43cf2821c82a7b85819932
+
+PODFILE CHECKSUM: ba6241968baee18d8ac2f82d67de0927a5a93d32
+
+COCOAPODS: 1.1.1
