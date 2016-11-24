@@ -1,9 +1,9 @@
 {
   "name": "BaseFramework",
   "version": "0.1.0",
-  "summary": "A short description of BaseFramework.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/BaseFramework",
+  "summary": "常用的类",
+  "description": "搭建项目框架常用的类",
+  "homepage": "https://github.com/zhonglaoban",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,19 @@
     "钟凡": "1049056949@"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/BaseFramework.git",
+    "git": "git@123.57.239.39:zhongfan/BaseFramework.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "BaseFramework/Classes/**/*"
+  "source_files": "BaseFramework/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "SDWebImage": [
+
+    ]
+  }
 }

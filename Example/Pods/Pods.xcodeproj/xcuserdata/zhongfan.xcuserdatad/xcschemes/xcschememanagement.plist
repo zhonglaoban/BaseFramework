@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>BaseFramework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -27,12 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>769CB9DBB08299FABBE9BB6212A468D4</key>
+		<key>AB7B600C4ECBA5F6C1038703D5B0716E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D2DAB3AA1F2D52701A3725389E526A06</key>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5435D8B06072C57ADA4CB9E02D4AFA6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDD5D8E45BA429AB05400094B20C1E88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
