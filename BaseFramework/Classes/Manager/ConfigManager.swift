@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigManager: NSObject {
+open class ConfigManager: NSObject {
     // 服务器地址 211.64.142.84:80 111.204.215.170:99
     static let defaultRpcIp:String = "http://172.16.3.55:9090/itone/rpc"
     static let defaultServerIp:String = "101.201.196.29:80"

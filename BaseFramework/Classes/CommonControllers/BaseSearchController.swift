@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class BaseSearchController: UISearchController {
+open class BaseSearchController: UISearchController {
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.tintColor = StyleManager.tintColor
     }
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

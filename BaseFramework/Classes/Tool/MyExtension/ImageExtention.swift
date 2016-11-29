@@ -9,7 +9,7 @@
 import Foundation
 
 extension UIImage {
-    func circleImage() -> UIImage? {
+    public func circleImage() -> UIImage? {
         let w = self.size.width
         let h = self.size.height
         let rect = CGRect(x: 0, y: 0, width: w, height: h)

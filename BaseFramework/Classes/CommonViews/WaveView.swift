@@ -17,7 +17,7 @@ import UIKit
  *  - ω——角速度， 控制正弦周期(单位角度内震动的次数)。
  *  - 因为波浪一直在动 不考虑 φ，x轴方向的偏移
 */
-public class WaveView: UIView {
+open class WaveView: UIView {
     fileprivate var timer:Timer!
     fileprivate var deltaX:CGFloat = 0
     fileprivate var deltaY:CGFloat = 0
@@ -30,7 +30,7 @@ public class WaveView: UIView {
     
     var colors:[UIColor] = [UIColor(r: 0, g: 222, b: 255, a: 0.2), UIColor(r: 157, g: 192, b: 249, a: 0.2), UIColor(r: 0, g: 168, b: 255, a: 0.2)]
     
-    override public func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         
         let ctx = UIGraphicsGetCurrentContext()
         step += 2

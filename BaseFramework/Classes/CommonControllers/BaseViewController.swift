@@ -9,23 +9,23 @@
 import UIKit
 import AVFoundation
 
-public class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+open class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
     }
-    override public func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         view.endEditing(true)
     }
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -75,7 +75,7 @@ public class BaseViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     // MARK: -  imagePickerController delegate
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ShowMessageTool: NSObject {
+open class ShowMessageTool: NSObject {
     
     static fileprivate let tool = ShowMessageTool()
     static func shareInstance() -> ShowMessageTool {

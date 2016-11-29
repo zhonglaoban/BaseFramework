@@ -13,7 +13,7 @@ enum RequestType:Int {
     case put
     case delete
 }
-class AFNManager: NSObject {
+open class AFNManager: NSObject {
     /*
     static let manager = AFHTTPSessionManager()
     static var downloadTask:URLSessionDownloadTask?

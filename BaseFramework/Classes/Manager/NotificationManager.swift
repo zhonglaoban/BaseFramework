@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationManager: NSObject {
+open class NotificationManager: NSObject {
     static let REFRESH_TASK_NOTIFICATION = "REFRESH_TASK_NOTIFICATION"
     
     static let TASK_OR_MISSION_EDIT_NOTIFICATION = "TASK_OR_MISSION_EDIT_NOTIFICATION"

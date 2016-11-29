@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ShowPicAnimator: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+open class ShowPicAnimator: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     var isPresent: Bool = true
     var dummyView: UIView?
     var backgroudViewColor: UIColor?

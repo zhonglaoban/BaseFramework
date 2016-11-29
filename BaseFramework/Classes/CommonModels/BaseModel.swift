@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseModel: NSObject {
+open class BaseModel: NSObject {
     init(dict: [String: Any]) {
         // 实例化对象
         super.init()

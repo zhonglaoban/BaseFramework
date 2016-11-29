@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ScrawlView: UIView {
+open class ScrawlView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.

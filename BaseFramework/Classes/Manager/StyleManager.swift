@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class StyleManager: NSObject {
+open class StyleManager: NSObject {
     /// 蓝蓝的
     static let tintColor:UIColor = UIColor(r: 28, g: 156, b: 221, a: 1)
     /// 灰灰的

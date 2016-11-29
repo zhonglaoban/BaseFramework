@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-public class ShowImageController: UIViewController, UIScrollViewDelegate {
+open class ShowImageController: UIViewController, UIScrollViewDelegate {
     
     lazy var alertTitles:[String] = {
        return [String]()
@@ -82,7 +82,7 @@ public class ShowImageController: UIViewController, UIScrollViewDelegate {
         
         return CGSize(width: view.bounds.size.width, height: h)
     }
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         // 添加滚动视图
@@ -96,11 +96,11 @@ public class ShowImageController: UIViewController, UIScrollViewDelegate {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ShowImageController.alertWithTitle(_:)))
         self.view.addGestureRecognizer(longPress)
     }
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.fade)
     }
-    override public func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.none)
     }

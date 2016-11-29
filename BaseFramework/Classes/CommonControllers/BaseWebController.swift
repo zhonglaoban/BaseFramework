@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
+open class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
     var urlString:String!
     lazy var webView:WKWebView = {
         let config = WKWebViewConfiguration()
@@ -60,28 +60,28 @@ class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
     }()
     
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
         buildUI()
         loadData()
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: true)
         if title != nil {
 //            MobClick.beginLogPageView(title!)
         }
     }
-    override func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         if title != nil {
 //            MobClick.endLogPageView(title!)
         }
     }
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -98,14 +98,14 @@ class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
         view.addSubview(bublleBtn)
         view.addSubview(toolbar)
     }
-    func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let ac = UIAlertController(title: webView.title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         ac.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: { (aa) -> Void in
             completionHandler()
         }))
         self.present(ac, animated: true, completion: nil)
     }
-    func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
             completionHandler(true)
@@ -115,7 +115,7 @@ class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
         }))
         present(alertController, animated: true, completion: nil)
     }
-    func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+    public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addTextField { (textFeild) in
             textFeild.text = defaultText
@@ -128,7 +128,7 @@ class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
         }))
         present(alertController, animated: true, completion: nil)
     }
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             if (object! as AnyObject).isEqual(webView) {
                 let progress = change![NSKeyValueChangeKey.newKey] as? Float

@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class BaseNavController: UINavigationController {
+open class BaseNavController: UINavigationController {
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.isTranslucent = false
@@ -20,7 +20,7 @@ public class BaseNavController: UINavigationController {
         navigationBar.tintColor = StyleManager.tintColor
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -34,7 +34,7 @@ public class BaseNavController: UINavigationController {
         // Pass the selected object to the new view controller.
     }
     */
-    override public func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }

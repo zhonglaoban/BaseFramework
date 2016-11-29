@@ -13,7 +13,7 @@ protocol ShakeCollectionViewDelegate: NSObjectProtocol {
     func collectionView(_ collectionView: ShakeCollectionView, deleteAtIndexPath: IndexPath)
     func collectionView(_ collectionView: ShakeCollectionView, insertAtIndexPath: IndexPath)
 }
-class ShakeCollectionView: UICollectionView {
+open class ShakeCollectionView: UICollectionView {
     var shouldUpdate:Bool = false
     weak var shakeDelegate:ShakeCollectionViewDelegate?
     var sourceIndexPath:IndexPath?
