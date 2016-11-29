@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrawlView: UIView {
+public class ScrawlView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -24,7 +24,7 @@ class ScrawlView: UIView {
         layer.addSublayer(pathLayer)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

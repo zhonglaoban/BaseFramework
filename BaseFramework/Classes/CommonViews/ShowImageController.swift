@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
-class ShowImageController: UIViewController, UIScrollViewDelegate {
+public class ShowImageController: UIViewController, UIScrollViewDelegate {
     
     lazy var alertTitles:[String] = {
        return [String]()
@@ -46,12 +47,12 @@ class ShowImageController: UIViewController, UIScrollViewDelegate {
     var imageURL: URL? {
         didSet {
             // 下载图像
-//            imageView.sd_setImage(with: imageURL) { (image, error, _, _) -> Void in
-//                if error != nil {
-//                        return
-//                    }
-//                _ = self.calaImageSize(image!)
-//            }
+            imageView.sd_setImage(with: imageURL) { (image, error, _, _) -> Void in
+                if error != nil {
+                        return
+                    }
+                _ = self.calaImageSize(image!)
+            }
         }
     }
     
@@ -81,7 +82,7 @@ class ShowImageController: UIViewController, UIScrollViewDelegate {
         
         return CGSize(width: view.bounds.size.width, height: h)
     }
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         // 添加滚动视图
@@ -95,11 +96,11 @@ class ShowImageController: UIViewController, UIScrollViewDelegate {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ShowImageController.alertWithTitle(_:)))
         self.view.addGestureRecognizer(longPress)
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.fade)
     }
-    override func viewWillDisappear(_ animated: Bool) {
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.none)
     }
@@ -141,10 +142,10 @@ class ShowImageController: UIViewController, UIScrollViewDelegate {
     }
     // MARK: - ScrollView 的代理
     /// 返回要缩放的视图
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
         var rect = imageView.frame
         rect.origin.x = 0
         rect.origin.y = 0

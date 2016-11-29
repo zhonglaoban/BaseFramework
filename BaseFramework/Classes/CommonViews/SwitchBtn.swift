@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SwitchBtn: UIButton {
-    override func awakeFromNib() {
+public class SwitchBtn: UIButton {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         let image = UIImage(from: UIColor(r: 28, g: 167, b: 221, a: 1))
         
@@ -31,13 +31,13 @@ class SwitchBtn: UIButton {
         setImage(image, for: UIControlState.selected)
         setImage(nil, for: UIControlState())
     }
-    override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
+    override public func imageRect(forContentRect contentRect: CGRect) -> CGRect {
         return CGRect(x: 0, y: contentRect.height - 1.5, width: self.width, height: 1.5)
     }
-    override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
+    override public func titleRect(forContentRect contentRect: CGRect) -> CGRect {
         return CGRect(x: 0, y: 0, width: contentRect.width, height: 30)
     }
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
 }

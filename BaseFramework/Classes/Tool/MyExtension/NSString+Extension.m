@@ -7,7 +7,7 @@
 //
 
 #import "NSString+Extension.h"
-
+ 
 @implementation NSString (Extension)
 + (NSString *)base64StringFromImage:(UIImage *)image {
     

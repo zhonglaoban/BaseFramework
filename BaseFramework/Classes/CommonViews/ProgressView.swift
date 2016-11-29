@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProgressView: UIView {
+public class ProgressView: UIView {
     var pauseLayer: CAShapeLayer?
     var progressLayer: CAShapeLayer?
     var endAg:CGFloat = 0
@@ -34,11 +34,11 @@ class ProgressView: UIView {
         backgroundColor = UIColor.clear
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
         let xCenter = rect.size.width * 0.5
         let yCenter = rect.size.height * 0.5

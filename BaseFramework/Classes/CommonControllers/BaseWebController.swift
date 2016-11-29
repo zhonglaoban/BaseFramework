@@ -9,27 +9,6 @@
 import UIKit
 import WebKit
 
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
-
 class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
     var urlString:String!
     lazy var webView:WKWebView = {
@@ -91,14 +70,14 @@ class BaseWebController: UIViewController , WKNavigationDelegate, WKUIDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: true)
-        if title?.characters.count > 0 {
+        if title != nil {
 //            MobClick.beginLogPageView(title!)
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if title?.characters.count > 0 {
+        if title != nil {
 //            MobClick.endLogPageView(title!)
         }
     }
