@@ -2,7 +2,6 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import <Foundation/Foundation.h>
 #import "PIColorPickerController.h"
 #import "PIDrawerView.h"
 #import "BannerMenuView.h"

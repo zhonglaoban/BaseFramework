@@ -1,6 +1,6 @@
 {
   "name": "BaseFramework",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "常用的类",
   "description": "搭建项目框架常用的类",
   "homepage": "https://github.com/zhonglaoban",
@@ -13,12 +13,13 @@
   },
   "source": {
     "git": "git@123.57.239.39:zhongfan/BaseFramework.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "BaseFramework/Classes/**/*",
+  "source_files": "BaseFramework/Classes/**/*.{h,m,swift}",
+  "resources": "BaseFramework/Classes/**/*.{lproj,storyboard,xib,xcassets,json,imageset,png}",
   "dependencies": {
     "AFNetworking": [
 

@@ -11,7 +11,7 @@ import UIKit
 open class ShowMessageTool: NSObject {
     
     static fileprivate let tool = ShowMessageTool()
-    static func shareInstance() -> ShowMessageTool {
+    public static func shareInstance() -> ShowMessageTool {
         return tool
     }
     
@@ -19,7 +19,7 @@ open class ShowMessageTool: NSObject {
         
         return TextView()
     }()
-    func showTextMessage(_ text:String) {
+    public func showTextMessage(_ text:String) {
         if textView.superview != nil || text == "" {
             return
         }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BaseFramework'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '常用的类'
 
 # This description is used to generate tags and improve search results.
@@ -30,11 +30,12 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'BaseFramework/Classes/**/*'
+  s.source_files = 'BaseFramework/Classes/**/*.{h,m,swift}'
   
-  # s.resource_bundles = {
-  #   'BaseFramework' => ['BaseFramework/Assets/*.png']
-  # }
+#s.resource_bundles = {
+#  'BaseFramework' => ['BaseFramework/Assets/*']
+# }
+    s.resource = 'BaseFramework/Classes/**/*.{lproj,storyboard,xib,xcassets,json,imageset,png}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

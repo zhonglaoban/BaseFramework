@@ -9,7 +9,7 @@
 import UIKit
 
 open class BaseModel: NSObject {
-    init(dict: [String: Any]) {
+    public init(dict: [String: Any]) {
         // 实例化对象
         super.init()
         
@@ -22,7 +22,7 @@ open class BaseModel: NSObject {
             }
         }
     }
-    override init() {
+    public override init() {
         super.init()
     }
 }

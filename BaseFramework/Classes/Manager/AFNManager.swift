@@ -7,7 +7,7 @@
 //
 //import AFNetworking
 
-enum RequestType:Int {
+public enum RequestType:Int {
     case post = 0
     case get
     case put

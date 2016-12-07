@@ -9,6 +9,7 @@
 #import "BublleBtn.h"
 #import "FilePath.h"
 
+
 typedef NS_ENUM (NSUInteger, LocationTag)
 {
     kLocationTag_top = 1,
@@ -30,14 +31,19 @@ typedef NS_ENUM (NSUInteger, LocationTag)
     
     float _w;
     float _h;
+    float width;
+    float height;
 }
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _w = [UIScreen mainScreen].bounds.size.width;
         _h = [UIScreen mainScreen].bounds.size.height - 44;
+        width = frame.size.width;
+        height = frame.size.height;
         NSString *path = [FilePath getFilePath:@"btn.png"];
         UIImage *img = [UIImage imageWithContentsOfFile:path];
         [self setBackgroundImage:img forState:UIControlStateNormal];
+        [self addSubview:self.toolbar];
     }
     return self;
 }
@@ -58,9 +64,11 @@ typedef NS_ENUM (NSUInteger, LocationTag)
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     _lastFrame = self.frame;
-    if (_bublleClick) {
-        if (_bClick) {
-            _bublleClick(self);
+    if (_bClick) {
+        if (_toolbar.bounds.size.width > 0) {
+            [self hideMenu];
+        }else {
+            [self showMenu];
         }
     }
     [self computeOfLocation];
@@ -84,6 +92,21 @@ typedef NS_ENUM (NSUInteger, LocationTag)
     }
     
     [self setCenter:movedPT];
+}
+- (void)itemClick:(UIBarButtonItem *)sender {
+    if (_bublleClick) {
+        _bublleClick(self);
+    }
+}
+- (void)showMenu {
+    [UIView animateWithDuration:2 delay:0.5 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        _toolbar.frame = CGRectMake(width, 0, _w - width, height);
+    } completion:nil];
+}
+- (void)hideMenu {
+    [UIView animateWithDuration:1.0 animations:^{
+        _toolbar.frame = CGRectMake(width, 0, 0, height);
+    }];
 }
 - (void)computeOfLocation
 {
@@ -162,5 +185,57 @@ typedef NS_ENUM (NSUInteger, LocationTag)
          UIImage *img = [UIImage imageWithContentsOfFile:path];
          [self setBackgroundImage:img forState:UIControlStateNormal];
      }];
+}
+- (UIToolbar *)toolbar {
+    if (!_toolbar) {
+        UIImage *backImg = [UIImage imageNamed:@"btn_back"];
+        backImg = [backImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIBarButtonItem *backItem   = [[UIBarButtonItem alloc] initWithImage:backImg
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(itemClick:)];
+        backItem.tag = 301;
+        
+        UIImage *forwardImg = [UIImage imageNamed:@"btn_home"];
+        forwardImg = [forwardImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIBarButtonItem *forwardItem = [[UIBarButtonItem alloc] initWithImage:forwardImg
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self
+                                                                       action:@selector(itemClick:)];
+        forwardItem.tag = 302;
+        
+        UIImage *addTaskImg = [UIImage imageNamed:@"btn_share"];
+        addTaskImg = [addTaskImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIBarButtonItem *addTaskItem = [[UIBarButtonItem alloc] initWithImage:addTaskImg
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self
+                                                                       action:@selector(itemClick:)];
+        addTaskItem.tag = 303;
+        
+        UIImage *quitImage = [UIImage imageNamed:@"btn_quit"];
+        quitImage = [quitImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIBarButtonItem *quitItem = [[UIBarButtonItem alloc] initWithImage:quitImage
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(itemClick:)];
+        quitItem.tag = 304;
+        
+        UIImage *refreshImage = [UIImage imageNamed:@"btn_refresh"];
+        refreshImage = [refreshImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithImage:refreshImage
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self
+                                                                       action:@selector(itemClick:)];
+        refreshItem.tag = 305;
+        UIBarButtonItem *placeHolderItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                         target:self
+                                                                                         action:nil];
+        _toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(width, 0, 0, height)];
+        _toolbar.backgroundColor = [UIColor whiteColor];
+        _toolbar.barStyle = UIBarStyleDefault;
+        _toolbar.items = @[backItem, placeHolderItem, forwardItem, placeHolderItem, addTaskItem, placeHolderItem, refreshItem, placeHolderItem, quitItem];
+    }
+    
+    return _toolbar;
 }
 @end

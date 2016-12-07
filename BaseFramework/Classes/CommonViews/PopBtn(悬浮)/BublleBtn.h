@@ -13,5 +13,5 @@ typedef void(^BublleClick)(BublleBtn *btn);
 @interface BublleBtn : UIButton
 
 @property (nonatomic, strong) BublleClick bublleClick;
-
+@property (nonatomic, strong) UIToolbar *toolbar;
 @end

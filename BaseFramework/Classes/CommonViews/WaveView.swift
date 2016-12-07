@@ -43,7 +43,7 @@ open class WaveView: UIView {
             let path = UIBezierPath()
             let startY = height - waveStartY
             path.move(to: CGPoint(x: 0, y: startY + deltaY))
-            path.addCurve(to: CGPoint(x: width, y: startY + deltaX), controlPoint1: CGPoint(x: width * 0.5, y: startY + deltaY), controlPoint2: CGPoint(x: width * 0.5, y: startY + deltaX))
+            path.addCurve(to: CGPoint(x: width, y: startY + deltaY), controlPoint1: CGPoint(x: width * 0.5, y: startY + deltaX - waveAmplitude), controlPoint2: CGPoint(x: width * 0.5, y: startY + deltaY - waveAmplitude))
             path.addLine(to: CGPoint(x: width, y: height))
             path.addLine(to: CGPoint(x: 0, y: height))
             
