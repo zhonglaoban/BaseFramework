@@ -142,7 +142,7 @@ public class PopButton: UIButton {
     }
     func hideMenu() {
         isMenuShow = false
-        for (i,item) in items.enumerated() {
+        for item in items {
             item.isUserInteractionEnabled = false
             item.alpha = 0
             if superview!.subviews.contains(item) {

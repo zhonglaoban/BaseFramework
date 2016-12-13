@@ -11,5 +11,5 @@
 @interface UIColor (Extention)
 
 +(UIColor *)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue A:(CGFloat)alpa;
-
++(UIColor *)randomColor;
 @end

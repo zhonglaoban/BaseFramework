@@ -80,6 +80,15 @@ extension String {
             return false
         }
     }
+    public func randomStr(length:Int) -> String {
+        var output = ""
+        for _ in 0..<length {
+            let randomNumber = arc4random_uniform(1000) % 26 + 97
+            let randomChar = Character(UnicodeScalar(randomNumber)!)
+            output.append(randomChar)
+        }
+        return output
+    }
     /* 如果使用需要导入 #import <CommonCrypto/CommonDigest.h>
     public func md5() ->String {
         let str = self.cString(using: String.Encoding.utf8)
