@@ -13,17 +13,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let waveView = SinView(frame: view.frame)
-        waveView.backgroundColor = UIColor.white
-        
-        waveView.start()
-        view.addSubview(waveView)
-        let v = Bundle(for: PopView.self).loadNibNamed("PopView", owner: self, options: nil)?.first as! PopView
-        v.backgroundColor = UIColor.blue
-//        view.addSubview(v)
-        let btn = BublleBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        btn.backgroundColor = UIColor.blue
+        let image = UIImage(named: "btn")!
+        let btn = PopButton(frame:CGRect(x: 0, y: 100, width: 50, height: 50))
+        btn.clickBlock = { btn in
+            let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+//            let excludeActivities = [UIActivityType.airDrop, .copyToPasteboard, .message, .mail]
+            self.present(shareVC, animated: true, completion: nil)
+        }
         view.addSubview(btn)
         // Do any additional setup after loading the view, typically from a nib.
     }
