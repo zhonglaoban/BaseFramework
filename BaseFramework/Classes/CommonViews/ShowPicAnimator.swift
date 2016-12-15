@@ -10,10 +10,10 @@ import UIKit
 
 open class ShowPicAnimator: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     var isPresent: Bool = true
-    var dummyView: UIView?
-    var backgroudViewColor: UIColor?
-    var sourceRect: CGRect = CGRect.zero
-    var destRect: CGRect = CGRect.zero
+    public var dummyView: UIView?
+    public var backgroudViewColor: UIColor?
+    public var sourceRect: CGRect = CGRect.zero
+    public var destRect: CGRect = CGRect.zero
     // 指定谁负责转场动画
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = true

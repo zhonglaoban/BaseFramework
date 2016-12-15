@@ -80,7 +80,7 @@ extension String {
             return false
         }
     }
-    public func randomStr(length:Int) -> String {
+    public static func randomStr(length:Int) -> String {
         var output = ""
         for _ in 0..<length {
             let randomNumber = arc4random_uniform(1000) % 26 + 97

@@ -1,5 +1,5 @@
 //
-//  UITableViewCell + Badge.swift
+//  CellExtension.swift
 //  MyRill
 //
 //  Created by 钟凡 on 16/8/12.
@@ -9,6 +9,7 @@
 import UIKit
 
 extension UITableViewCell {
+    
     public func showBadge(_ title:String) {
         for view in subviews {
             if view.tag == 888 {
@@ -35,5 +36,12 @@ extension UITableViewCell {
             }
         }
     }
-
+    public func showSeperateLine(lineFrame:CGRect) {
+        let line = CALayer()
+        line.backgroundColor = StyleManager.separatorColor?.cgColor
+        line.frame = lineFrame
+        if !layer.sublayers!.contains(line) {
+            layer.addSublayer(line)
+        }
+    }
 }

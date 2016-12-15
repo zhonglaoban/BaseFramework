@@ -75,7 +75,7 @@
 		6892AEE5654256B79D79A27DE1A39C93 /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 441AA5A930E847CE20706E40F0C86182 /* UIImage+MultiFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D64B0E73F71E2CC60931C2E600D0AE9 /* BaseSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90946CF61DF546F1E264851972D607B /* BaseSearchController.swift */; };
 		6F0924756EE3D80471A8631FC8BBC181 /* TAAnimatedDotView.h in Headers */ = {isa = PBXBuildFile; fileRef = 90F195B95A0D2BB8A9AE91BF99BC505D /* TAAnimatedDotView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F2086FC8D28F822A0CB9F1DD48DA787 /* UITableViewCell + Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FCFD9C5548FF4BC58835093DD67C5 /* UITableViewCell + Badge.swift */; };
+		6F2086FC8D28F822A0CB9F1DD48DA787 /* CellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FCFD9C5548FF4BC58835093DD67C5 /* CellExtension.swift */; };
 		72BE65E696A388D4CC0D75BE461FEF1B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29B448DE2720E737F90C4F2687642CF /* MobileCoreServices.framework */; };
 		758344F6AE8A2A33E897992C307F4426 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9369B3A63E5DEDF476A24848AEB87AF7 /* UIImageView+HighlightedWebCache.m */; };
 		7755BCA8AFD18F17721B751140432098 /* ass_common_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91EEBA959F54F228F349DB93FE611DB7 /* ass_common_icon@2x.png */; };
@@ -366,7 +366,7 @@
 		D24FBB850ACFD0E547050262037A5881 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		D7D88CFE437779F20B0255544E200572 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
 		D7ED582E79B6BF1CA112B53D40188077 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		DA4FCFD9C5548FF4BC58835093DD67C5 /* UITableViewCell + Badge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + Badge.swift"; sourceTree = "<group>"; };
+		DA4FCFD9C5548FF4BC58835093DD67C5 /* CellExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CellExtension.swift; sourceTree = "<group>"; };
 		DCBC99CB2E987F06D67933DDEA220AAA /* SDCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
 		DE4A28838F2FED9D7CB26B68472CC4AB /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		DEF3C2D035B58496BB3C9ED7A1AC3E7D /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
@@ -503,7 +503,7 @@
 				EB61C231B1D7696249638A101BBB3AB8 /* UIImage+Extention.h */,
 				58445F63BD148D36894D6B6DED4E947C /* UIImage+Extention.m */,
 				C049E6B99B8D3E9923F41E3102F16E24 /* UITabBar+Custom.swift */,
-				DA4FCFD9C5548FF4BC58835093DD67C5 /* UITableViewCell + Badge.swift */,
+				DA4FCFD9C5548FF4BC58835093DD67C5 /* CellExtension.swift */,
 				63D50D0CD70190C06BB1C5A906F29CCA /* UIView+Extention.h */,
 				313BCE72275100B947E02F79FED95497 /* UIView+Extention.m */,
 				7B17C29B65DD3562877F99B394A7F08E /* UIViewExtention.swift */,
@@ -1289,7 +1289,7 @@
 				6051EDD3520BC440A4BC95BA4CD97092 /* UIColor+Extention.m in Sources */,
 				1A9E7A181FC035453888E922F96EE844 /* UIImage+Extention.m in Sources */,
 				CBEEA5224A5839B3FBCFFBC968514F20 /* UITabBar+Custom.swift in Sources */,
-				6F2086FC8D28F822A0CB9F1DD48DA787 /* UITableViewCell + Badge.swift in Sources */,
+				6F2086FC8D28F822A0CB9F1DD48DA787 /* CellExtension.swift in Sources */,
 				A3EA56C51CB2941ED721D6D61FD38998 /* UIView+Extention.m in Sources */,
 				81A640631CA06D4ECB9B9A1FF979D150 /* UIView+SDExtension.m in Sources */,
 				D6F9CEE7B936C1D022DA588527016C6E /* UIViewExtention.swift in Sources */,

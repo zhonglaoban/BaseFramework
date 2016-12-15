@@ -21,6 +21,7 @@ open class ConfigManager: NSObject {
     
     // alertView 常量
     public static let alertTitle_saveImage = "保存图片"
+    public static let alertTitle_uploadImage = "上传图片"
     public static let alertTitle_send = "发送给朋友"
     public static let alertTitle_collect = "收藏"
     // 友盟
