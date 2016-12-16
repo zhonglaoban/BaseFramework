@@ -12,6 +12,7 @@ import BaseFramework
 class ViewController: UIViewController {
 
     @IBOutlet weak var sinView: SinView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sinView.startY = 20

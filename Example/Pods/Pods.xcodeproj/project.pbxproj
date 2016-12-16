@@ -55,6 +55,12 @@
 		4511B3E11E03CB5C0042DE1C /* Emoticons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3DC1E03CB5C0042DE1C /* Emoticons.swift */; };
 		4511B3E21E03CB5C0042DE1C /* EmoticonsAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3DD1E03CB5C0042DE1C /* EmoticonsAttachment.swift */; };
 		4511B3E31E03CB5C0042DE1C /* EmoticonsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3DE1E03CB5C0042DE1C /* EmoticonsTextView.swift */; };
+		4511B3EB1E03CDA30042DE1C /* AFNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3E51E03CDA30042DE1C /* AFNManager.swift */; };
+		4511B3EC1E03CDA30042DE1C /* CacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4511B3E61E03CDA30042DE1C /* CacheManager.h */; };
+		4511B3ED1E03CDA30042DE1C /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3E71E03CDA30042DE1C /* CacheManager.m */; };
+		4511B3EE1E03CDA30042DE1C /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3E81E03CDA30042DE1C /* ConfigManager.swift */; };
+		4511B3EF1E03CDA30042DE1C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3E91E03CDA30042DE1C /* NotificationManager.swift */; };
+		4511B3F01E03CDA30042DE1C /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4511B3EA1E03CDA30042DE1C /* StyleManager.swift */; };
 		45F802D04B3BE0CAEC586C2F3016027B /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFAD50A24C16F359CC6372070C04F08 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4716801454EB54C46DEDB35E8683FE38 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA96771ADC5B69AB17D275109F45EE51 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F04CBDF6C54B220F6AEECEF15264D5 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 9429F587C2B03E5A9A2F43F212317ED4 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -259,6 +265,12 @@
 		4511B3DC1E03CB5C0042DE1C /* Emoticons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticons.swift; sourceTree = "<group>"; };
 		4511B3DD1E03CB5C0042DE1C /* EmoticonsAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonsAttachment.swift; sourceTree = "<group>"; };
 		4511B3DE1E03CB5C0042DE1C /* EmoticonsTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonsTextView.swift; sourceTree = "<group>"; };
+		4511B3E51E03CDA30042DE1C /* AFNManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFNManager.swift; sourceTree = "<group>"; };
+		4511B3E61E03CDA30042DE1C /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
+		4511B3E71E03CDA30042DE1C /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
+		4511B3E81E03CDA30042DE1C /* ConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		4511B3E91E03CDA30042DE1C /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		4511B3EA1E03CDA30042DE1C /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		45F15F2239147C01AA2E8B9E3DDA56C0 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		4691BFAD2376F1A51B0CB9446CABA146 /* TAAbstractDotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		46F53FE8B3B711F215EFA456168BF1C0 /* Pods-BaseFramework_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BaseFramework_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -575,6 +587,19 @@
 			path = Emoticons;
 			sourceTree = "<group>";
 		};
+		4511B3E41E03CDA30042DE1C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4511B3E51E03CDA30042DE1C /* AFNManager.swift */,
+				4511B3E61E03CDA30042DE1C /* CacheManager.h */,
+				4511B3E71E03CDA30042DE1C /* CacheManager.m */,
+				4511B3E81E03CDA30042DE1C /* ConfigManager.swift */,
+				4511B3E91E03CDA30042DE1C /* NotificationManager.swift */,
+				4511B3EA1E03CDA30042DE1C /* StyleManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		5350EEF8FA5FCA4F867BD41CCDDE8050 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +827,7 @@
 		99CBCAAF00295904D775ECE20B1A0358 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4511B3E41E03CDA30042DE1C /* Manager */,
 				0C80D63A0B643BE1B81E2AD6BA029246 /* CommonControllers */,
 				19C14343FC8CC1965D36D0AF9BCB8C34 /* CommonModels */,
 				6C530109473DA865581AAD9390F30D69 /* CommonViews */,
@@ -1009,6 +1035,7 @@
 				B4624B832957AB5E92F2968610E2F231 /* UIImage+Extention.h in Headers */,
 				B63ADAF10A98B778EC95F2E32AECE693 /* UIView+Extention.h in Headers */,
 				E19014D5ECDF16DB11549791E25AFE00 /* UIView+SDExtension.h in Headers */,
+				4511B3EC1E03CDA30042DE1C /* CacheManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1282,9 +1309,11 @@
 				7B0FDC804A56A9A6EE4162D7A93A280C /* PIColorPickerController.m in Sources */,
 				B2A97E168E5087121EDFD18F12DCB8F5 /* PIDrawerView.m in Sources */,
 				F25556B83F4DEDC8E1A79071C00C5D2E /* PopButton.swift in Sources */,
+				4511B3EB1E03CDA30042DE1C /* AFNManager.swift in Sources */,
 				7E258348A6E459F069D0FC9E8956B1D9 /* ProgressView.swift in Sources */,
 				64A32C78AFC84B4E078B5A5A47C6E85B /* ScrawlView.swift in Sources */,
 				2FBCE82314C0CED536BCD3A715ED7896 /* SDCollectionViewCell.m in Sources */,
+				4511B3EE1E03CDA30042DE1C /* ConfigManager.swift in Sources */,
 				289E5FFCE4CC28908C7D920D8A058974 /* SDCycleScrollView.m in Sources */,
 				4511B3E21E03CB5C0042DE1C /* EmoticonsAttachment.swift in Sources */,
 				C2B8C3A8573EB70098114290E60D0E43 /* ShakeCollectionView.swift in Sources */,
@@ -1293,6 +1322,7 @@
 				AEB338626AE7C5E3AA1D507722BC8D4F /* ShowPicAnimator.swift in Sources */,
 				4AEB4770CCDD8DFB68FBB1B6124292AB /* SinView.swift in Sources */,
 				322C05D96FB9142204B02C84B4A1ACA5 /* SNActionSheet.m in Sources */,
+				4511B3ED1E03CDA30042DE1C /* CacheManager.m in Sources */,
 				D555E0A82B685388BF318DCBA641D953 /* String+Extension.swift in Sources */,
 				92001B67A837AE507AE9A7B62A1E2ACF /* SwitchBtn.swift in Sources */,
 				F03515E1F50591F95C01DF3D61ED7EEB /* TAAbstractDotView.m in Sources */,
@@ -1301,7 +1331,9 @@
 				FD3B03FAEB5C5829373E06BB57F721BE /* TAPageControl.m in Sources */,
 				88CFFAB4DA7D00A16FFCAAC1A7FEFD47 /* UIColor+Extention.m in Sources */,
 				C7ACA1019E9A427CDCD3828B75C0ABEF /* UIImage+Extention.m in Sources */,
+				4511B3F01E03CDA30042DE1C /* StyleManager.swift in Sources */,
 				D4EB042F2242BB151130BD908AF05B57 /* UITabBar+Custom.swift in Sources */,
+				4511B3EF1E03CDA30042DE1C /* NotificationManager.swift in Sources */,
 				09AA7AD3FC92CF3B9A1FEBEEFE993EC2 /* UIView+Extention.m in Sources */,
 				D6C1F6CD1BFFE427AF39EAE7444126F1 /* UIView+SDExtension.m in Sources */,
 				D18988B7DC6B70D8B6D459F19DAE9C7D /* UIViewExtention.swift in Sources */,

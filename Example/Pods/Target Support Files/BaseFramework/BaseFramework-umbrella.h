@@ -15,7 +15,6 @@
 #import "SDCycleScrollView.h"
 #import "UIView+SDExtension.h"
 #import "SNActionSheet.h"
-#import "CacheManager.h"
 #import "NSString+Extension.h"
 #import "UIColor+Extention.h"
 #import "UIImage+Extention.h"
