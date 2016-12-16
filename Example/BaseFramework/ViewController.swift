@@ -11,13 +11,18 @@ import BaseFramework
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var sinView: SinView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        sinView.startY = 20
+        sinView.amplitude = 20
+        sinView.direction = .down
+        sinView.start()
+        
         let image = UIImage(named: "btn")!
         let btn = PopButton(frame:CGRect(x: 0, y: 100, width: 50, height: 50))
         btn.clickBlock = { btn in
             let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-//            let excludeActivities = [UIActivityType.airDrop, .copyToPasteboard, .message, .mail]
             self.present(shareVC, animated: true, completion: nil)
         }
         view.addSubview(btn)

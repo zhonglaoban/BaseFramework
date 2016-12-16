@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYK-jL-vaC">
-                                <rect key="frame" x="16" y="100" width="132" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYK-jL-vaC" customClass="SinView" customModule="BaseFramework">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-JC-Tru" customClass="BublleBtn">
                                         <rect key="frame" x="38" y="44" width="60" height="60"/>
@@ -32,10 +31,29 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92941176469999998" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gD3-Hy-qq8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="waveStartY">
+                                        <real key="value" value="200"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="waveAmplitude">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XYK-jL-vaC" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="dd6-cN-OS8"/>
+                            <constraint firstItem="XYK-jL-vaC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kKE-rK-r7V"/>
+                            <constraint firstAttribute="trailing" secondItem="XYK-jL-vaC" secondAttribute="trailing" id="tbQ-7Z-1Ff"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sinView" destination="XYK-jL-vaC" id="V73-53-mM8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
