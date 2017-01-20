@@ -8,26 +8,35 @@
 
 import UIKit
 import BaseFramework
+import CoreMotion
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var sinView: SinView!
-    
+    lazy var accelerometer: CMMotionManager = {
+        let mgr = CMMotionManager()
+        mgr.accelerometerUpdateInterval = 1/10.0
+        return mgr
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        sinView.startY = 20
-        sinView.amplitude = 20
-        sinView.direction = .down
-        sinView.start()
         
-        let image = UIImage(named: "btn")!
-        let btn = PopButton(frame:CGRect(x: 0, y: 100, width: 50, height: 50))
-        btn.clickBlock = { btn in
-            let shareVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-            self.present(shareVC, animated: true, completion: nil)
-        }
-        view.addSubview(btn)
+//        let wave = WaveView(frame: CGRect(x: 0, y: 0, width: view.width, height: 100))
+//        wave.direction = .up
+//        view.addSubview(wave)
+//        wave.start()
+//        
+//        accelerometer.startAccelerometerUpdates(to: OperationQueue.main) { (accelerometerData, err) in
+//            let x = Float(accelerometerData?.acceleration.x ?? 0)
+//            if x < 0.0 {
+//                wave.startY += 1
+//                wave.endY -= 1
+//            }else {
+//                wave.startY -= 1
+//                wave.endY += 1
+//            }
+//        }
         // Do any additional setup after loading the view, typically from a nib.
+        let sinView = SinView(frame: CGRect(x: 0, y: 0, width: view.width, height: 100))
+        view.addSubview(sinView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +44,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
         
     }
-
+    
+    func test() {
+    }
 }
 

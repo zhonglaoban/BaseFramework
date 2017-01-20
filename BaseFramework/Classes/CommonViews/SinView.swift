@@ -15,41 +15,36 @@ import UIKit
  *  - k——偏距，反映在坐标系上则为图像的上移或下移。
  *  - ω——角速度， 控制正弦周期(单位角度内震动的次数)。
  */
+public enum WaveDirection {
+    case up
+    case down
+}
 open class SinView: UIView {
     fileprivate var timer:Timer!
-    fileprivate var deltaX:CGFloat = 0
-    fileprivate var deltaY:CGFloat = 0
     fileprivate var step:Int = 0
-    fileprivate var angle:CGFloat = 0
-    /// 波浪起始位置 相当于 k 初始值为30
-    var waveStartY:CGFloat = 30
-    /// 波浪振幅 相当于 A 初始值为20
-    var waveAmplitude:CGFloat = 20
+    public var startY:CGFloat = 20
+    public var endY:CGFloat = 20
+    public var amplitude:CGFloat = 20
+    public var colors:[UIColor] = [UIColor(r: 0, g: 222, b: 255, a: 0.2), UIColor(r: 157, g: 192, b: 249, a: 0.2), UIColor(r: 0, g: 168, b: 255, a: 0.2)]
+    lazy var layers: [CAShapeLayer] = {
+        return [CAShapeLayer]()
+    }()
     
-    var colors:[UIColor] = [UIColor(r: 0, g: 222, b: 255, a: 0.2), UIColor(r: 157, g: 192, b: 249, a: 0.2), UIColor(r: 0, g: 168, b: 255, a: 0.2)]
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        initLayers()
+        start()
+    }
     
-    override open func draw(_ rect: CGRect) {
-        
-        let ctx = UIGraphicsGetCurrentContext()
-        step += 2
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func initLayers() {
         for color in colors {
-            let i = colors.index(of: color)
-            angle = CGFloat(step + i! * 50) * CGFloat(M_PI/180)
-            deltaY = sin(angle) * waveAmplitude
-            deltaX = cos(angle) * waveAmplitude
-            
-            let path = UIBezierPath()
-            let startY = height - waveStartY
-            path.move(to: CGPoint(x: 0, y: startY + deltaX))
-            path.addCurve(to: CGPoint(x: width, y: startY + deltaY), controlPoint1: CGPoint(x: width * 0.5, y: startY + deltaX - 20), controlPoint2: CGPoint(x: width * 0.5, y: startY + deltaY - 20))
-            path.addLine(to: CGPoint(x: width, y: height))
-            path.addLine(to: CGPoint(x: 0, y: height))
-            
-            color.setStroke()
-            color.setFill()
-            path.close()
-            ctx?.addPath(path.cgPath)
-            ctx?.fillPath()
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.fillColor = color.cgColor
+            layers.append(shapeLayer)
+            self.layer.addSublayer(shapeLayer)
         }
     }
     public func start()
@@ -60,6 +55,18 @@ open class SinView: UIView {
     }
     func refresh()
     {
-        self.setNeedsDisplay()
+        step += 2
+        for (index,shapeLayer) in layers.enumerated() {
+            let path = UIBezierPath()
+            let angle = CGFloat(step + index * 50) * CGFloat(M_PI/180)
+            let deltaY = sin(angle) * amplitude
+            let deltaX = cos(angle) * amplitude
+            path.move(to: CGPoint(x: 0, y: startY + deltaY))
+            path.addCurve(to: CGPoint(x: width, y: endY + deltaX), controlPoint1: CGPoint(x: width * 0.5, y: startY + deltaY + amplitude), controlPoint2: CGPoint(x: width * 0.5, y: endY + deltaX + amplitude))
+            path.addLine(to: CGPoint(x: width, y: 0))
+            path.addLine(to: CGPoint(x: 0, y: 0))
+            path.close()
+            shapeLayer.path = path.cgPath
+        }
     }
 }

@@ -24,28 +24,42 @@ open class WaveView: UIView {
     fileprivate var step:Int = 0
     fileprivate var angle:CGFloat = 0
     /// 波浪起始位置 相当于 k 初始值为30
-    var waveStartY:CGFloat = 30
+    public var startY:CGFloat = 20
+    public var endY:CGFloat = 20
     /// 波浪振幅 相当于 A 初始值为20
-    var waveAmplitude:CGFloat = 20
+    public var amplitude:CGFloat = 20
+    public var direction:WaveDirection = .down
     
-    var colors:[UIColor] = [UIColor(r: 0, g: 222, b: 255, a: 0.2), UIColor(r: 157, g: 192, b: 249, a: 0.2), UIColor(r: 0, g: 168, b: 255, a: 0.2)]
+    public var colors:[UIColor] = [UIColor(r: 0, g: 222, b: 255, a: 0.2), UIColor(r: 157, g: 192, b: 249, a: 0.2), UIColor(r: 0, g: 168, b: 255, a: 0.2)]
     
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.white
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override open func draw(_ rect: CGRect) {
-        
         let ctx = UIGraphicsGetCurrentContext()
         step += 2
         for color in colors {
             let i = colors.index(of: color)
             angle = CGFloat(step + i! * 50) * CGFloat(M_PI/180)
-            deltaY = sin(angle) * waveAmplitude
-            deltaX = cos(angle) * waveAmplitude
+            deltaY = sin(angle) * amplitude
+            deltaX = cos(angle) * amplitude
             
             let path = UIBezierPath()
-            let startY = height - waveStartY
             path.move(to: CGPoint(x: 0, y: startY + deltaY))
-            path.addCurve(to: CGPoint(x: width, y: startY + deltaY), controlPoint1: CGPoint(x: width * 0.5, y: startY + deltaX - waveAmplitude), controlPoint2: CGPoint(x: width * 0.5, y: startY + deltaY - waveAmplitude))
-            path.addLine(to: CGPoint(x: width, y: height))
-            path.addLine(to: CGPoint(x: 0, y: height))
+            path.addCurve(to: CGPoint(x: width, y: endY + deltaX), controlPoint1: CGPoint(x: width * 0.5, y: startY + deltaY + amplitude), controlPoint2: CGPoint(x: width * 0.5, y: endY + deltaX + amplitude))
+            if direction == .down {
+                path.addLine(to: CGPoint(x: width, y: height))
+                path.addLine(to: CGPoint(x: 0, y: height))
+            }
+            if direction == .up {
+                path.addLine(to: CGPoint(x: width, y: 0))
+                path.addLine(to: CGPoint(x: 0, y: 0))
+            }
             
             color.setStroke()
             color.setFill()
@@ -56,6 +70,10 @@ open class WaveView: UIView {
     }
     public func start()
     {
+        if direction == .down {
+            startY = height - startY
+            amplitude = -amplitude
+        }
         timer?.invalidate()
         timer  = Timer.scheduledTimer(timeInterval: 1.0/30, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
