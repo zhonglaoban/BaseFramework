@@ -15,7 +15,7 @@ public enum RequestType:Int {
 }
 open class AFNManager: NSObject {
     
-    static let manager = AFHTTPSessionManager()
+    open static let manager = AFHTTPSessionManager()
     static var downloadTask:URLSessionDownloadTask?
     
     open static func request(_ baseURLStr:String, type:RequestType, url:String, params:[String:Any]?, success:@escaping ((Any?)->()), failure:@escaping ((Error)->())) {
