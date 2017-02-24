@@ -5,7 +5,7 @@
 //  Created by 钟凡 on 16/9/1.
 //  Copyright © 2016年 钟凡. All rights reserved.
 //
-//import AFNetworking
+import AFNetworking
 
 public enum RequestType:Int {
     case post = 0
@@ -14,11 +14,11 @@ public enum RequestType:Int {
     case delete
 }
 open class AFNManager: NSObject {
-    /*
+    
     static let manager = AFHTTPSessionManager()
     static var downloadTask:URLSessionDownloadTask?
     
-    static func request(_ baseURLStr:String, type:RequestType, url:String, params:[String:Any]?, success:@escaping ((Any?)->()), failure:@escaping ((Error)->())) {
+    open static func request(_ baseURLStr:String, type:RequestType, url:String, params:[String:Any]?, success:@escaping ((Any?)->()), failure:@escaping ((Error)->())) {
         let urlStr = baseURLStr + url
         manager.requestSerializer = AFJSONRequestSerializer()
         let token = "DzFGcBFuWji/rVdkAjFnzmevkLM="
@@ -189,7 +189,7 @@ open class AFNManager: NSObject {
         })
     }
     // MARK: 业务
-    static func baseRequest(_ type:RequestType, url:String, params:[String:Any]?, complete:@escaping ((Any?)->())) {
+    open static func baseRequest(_ type:RequestType, url:String, params:[String:Any]?, complete:@escaping ((Any?)->())) {
         let baseURLStr = "http://\(ConfigManager.serverIp())/api/v2/"
         
         AFNManager.request(baseURLStr, type: type, url: url, params: params, success: { (response) in
@@ -281,5 +281,4 @@ open class AFNManager: NSObject {
             complete(response)
         })
     }
- */
 }

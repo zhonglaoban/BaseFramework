@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableViewCell {
     
-    public func showBadge(_ title:String) {
+    public func showaBadge(_ title:String) {
         for view in subviews {
             if view.tag == 888 {
                 view.isHidden = false
@@ -29,7 +29,7 @@ extension UITableViewCell {
         redBadge.backgroundColor = UIColor.red
         addSubview(redBadge)
     }
-    public func hideBadge() {
+    public func hideaBadge() {
         for view in subviews {
             if view.tag == 888 {
                 view.isHidden = true

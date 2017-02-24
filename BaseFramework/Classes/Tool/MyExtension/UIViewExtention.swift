@@ -18,8 +18,8 @@ extension UIView {
         let xCenter = width * 0.5
         let yCenter = height * 0.5
         let center = CGPoint(x: xCenter, y: yCenter)
-        let radius = min(xCenter, yCenter)
-        let lineW = max(xCenter, yCenter)
+        let radius = max(xCenter, yCenter)
+        let lineW = min(xCenter, yCenter)
 
         let circlePath = UIBezierPath(arcCenter: center, radius: radius + lineW * 0.5, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
         maskLayer.lineWidth = lineW

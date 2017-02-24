@@ -11,6 +11,22 @@ import BaseFramework
 import CoreMotion
 
 class ViewController: UIViewController {
+    @IBOutlet weak var yellowBtn: UIButton! {
+        didSet {
+            yellowBtn.clipToCircle()
+        }
+    }
+    @IBOutlet weak var orangeBtn: UIButton! {
+        didSet {
+            orangeBtn.clipToCircle()
+        }
+    }
+    @IBOutlet weak var brownBtn: UIButton! {
+        didSet {
+            brownBtn.clipToCircle()
+        }
+    }
+    
     lazy var accelerometer: CMMotionManager = {
         let mgr = CMMotionManager()
         mgr.accelerometerUpdateInterval = 1/10.0

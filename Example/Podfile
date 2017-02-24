@@ -3,9 +3,4 @@ use_frameworks!
 target 'BaseFramework_Example' do
   pod 'BaseFramework', :path => '../'
 
-  target 'BaseFramework_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
