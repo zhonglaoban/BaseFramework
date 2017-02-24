@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BaseFramework'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '常用的类'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '钟凡' => '1049056949@' }
-  s.source           = { :git => 'git@123.57.239.39:zhongfan/BaseFramework.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/zhonglaoban/BaseFramework.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
