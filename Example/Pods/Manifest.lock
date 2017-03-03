@@ -1,12 +1,15 @@
 PODS:
-  - BaseFramework (0.1.6):
-    - BaseFramework/CommonViews (= 0.1.6)
-    - BaseFramework/Extension (= 0.1.6)
-    - BaseFramework/Tool (= 0.1.6)
-  - BaseFramework/CommonViews (0.1.6):
+  - BaseFramework (0.2.0):
+    - BaseFramework/CommonViews (= 0.2.0)
+    - BaseFramework/Extension (= 0.2.0)
+    - BaseFramework/Tool (= 0.2.0)
+  - BaseFramework/CommonViews (0.2.0):
+    - BaseFramework/Extension
+    - BaseFramework/Tool
     - SDWebImage
-  - BaseFramework/Extension (0.1.6)
-  - BaseFramework/Tool (0.1.6)
+  - BaseFramework/Extension (0.2.0)
+  - BaseFramework/Tool (0.2.0):
+    - BaseFramework/Extension
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -19,7 +22,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  BaseFramework: fcd3b591bb83a456622f972e4a94cf3c3cea3b6f
+  BaseFramework: 48a7141962e20b31a9e1598c1dcdb42786e684a5
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
 PODFILE CHECKSUM: bb8fb0692877c68470da6c6e5a684dafb90b1c7a

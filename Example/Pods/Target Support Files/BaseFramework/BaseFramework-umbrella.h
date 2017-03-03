@@ -14,7 +14,6 @@
 #import "SDCollectionViewCell.h"
 #import "SDCycleScrollView.h"
 #import "UIView+SDExtension.h"
-#import "NSString+Extension.h"
 #import "UIColor+Extention.h"
 #import "UIImage+Extention.h"
 

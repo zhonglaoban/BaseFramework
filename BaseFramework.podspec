@@ -24,8 +24,9 @@ Pod::Spec.new do |s|
 
     s.subspec 'CommonViews' do |commonViews|
     commonViews.source_files = 'BaseFramework/CommonViews/**/*.{h,m,swift}'
-    commonViews.public_header_files = 'BaseFramework/ComonViews/**/*.h'
     commonViews.dependency 'SDWebImage'
+    commonViews.dependency 'BaseFramework/Extension'
+    commonViews.dependency 'BaseFramework/Tool'
     commonViews.resource = 'BaseFramework/CommonViews/**/*.{xib,png,bundle}'
     end
 
@@ -36,7 +37,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'Tool' do |tool|
     tool.source_files = 'BaseFramework/Tool/**/*.{h,m,swift}'
-    tool.public_header_files = 'BaseFramework/Tool/**/*.h'
+    tool.dependency 'BaseFramework/Extension'
 
     end
 
