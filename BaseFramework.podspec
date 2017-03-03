@@ -7,38 +7,37 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'BaseFramework'
-  s.version          = '0.1.6'
-  s.summary          = '常用的类'
+    s.name             = 'BaseFramework'
+    s.version          = '0.2.0'
+    s.summary          = '常用的类'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-搭建项目框架常用的类
+    s.description      = <<-DESC
+    搭建项目框架常用的类
                        DESC
 
-  s.homepage         = 'https://github.com/zhonglaoban'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '钟凡' => '1049056949@' }
-  s.source           = { :git => 'https://github.com/zhonglaoban/BaseFramework.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+    s.homepage         = 'https://github.com/zhonglaoban'
+    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.author           = { '钟凡' => '1049056949@' }
+    s.source           = { :git => 'https://github.com/zhonglaoban/BaseFramework.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '8.0'
 
-  s.source_files = 'BaseFramework/Classes/**/*.{h,m,swift}'
-  
-#s.resource_bundles = {
-#  'BaseFramework' => ['BaseFramework/Assets/*']
-# }
-    s.resource = 'BaseFramework/Classes/**/*.{lproj,storyboard,xib,xcassets,json,imageset,png}'
+    s.subspec 'CommonViews' do |commonViews|
+    commonViews.source_files = 'BaseFramework/CommonViews/**/*.{h,m,swift}'
+    commonViews.public_header_files = 'BaseFramework/ComonViews/**/*.h'
+    commonViews.dependency 'SDWebImage'
+    commonViews.resource = 'BaseFramework/CommonViews/**/*.{xib,png,bundle}'
+    end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-    s.dependency 'AFNetworking'
-    s.dependency 'SDWebImage'
+    s.subspec 'Extension' do |extension|
+    extension.source_files = 'BaseFramework/Extension/**/*.{h,m,swift}'
+    extension.public_header_files = 'BaseFramework/Extension/**/*.h'
+    end
+
+    s.subspec 'Tool' do |tool|
+    tool.source_files = 'BaseFramework/Tool/**/*.{h,m,swift}'
+    tool.public_header_files = 'BaseFramework/Tool/**/*.h'
+
+    end
+
 end

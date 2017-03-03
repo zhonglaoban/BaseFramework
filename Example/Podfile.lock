@@ -1,22 +1,12 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
-  - BaseFramework (0.1.5):
-    - AFNetworking
+  - BaseFramework (0.1.6):
+    - BaseFramework/CommonViews (= 0.1.6)
+    - BaseFramework/Extension (= 0.1.6)
+    - BaseFramework/Tool (= 0.1.6)
+  - BaseFramework/CommonViews (0.1.6):
     - SDWebImage
+  - BaseFramework/Extension (0.1.6)
+  - BaseFramework/Tool (0.1.6)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -29,8 +19,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  BaseFramework: 62bee2135da3c436ccb8bb63fcfd083ea653f4ef
+  BaseFramework: fcd3b591bb83a456622f972e4a94cf3c3cea3b6f
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
 PODFILE CHECKSUM: bb8fb0692877c68470da6c6e5a684dafb90b1c7a
