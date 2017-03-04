@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CacheTool: NSObject {
+open class CacheTool: NSObject {
     static let fileManager = FileManager.default
     
     static func fileSize(atPath:String) -> Float {

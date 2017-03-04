@@ -9,6 +9,7 @@
 import UIKit
 
 extension UITableViewCell {
+    
     var redBadge: UILabel {
         get {
             let red = UILabel()

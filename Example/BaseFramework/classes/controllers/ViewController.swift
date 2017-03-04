@@ -35,24 +35,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let wave = WaveView(frame: CGRect(x: 0, y: 0, width: view.width, height: 100))
-//        wave.direction = .up
-//        view.addSubview(wave)
-//        wave.start()
-//        
-//        accelerometer.startAccelerometerUpdates(to: OperationQueue.main) { (accelerometerData, err) in
-//            let x = Float(accelerometerData?.acceleration.x ?? 0)
-//            if x < 0.0 {
-//                wave.startY += 1
-//                wave.endY -= 1
-//            }else {
-//                wave.startY -= 1
-//                wave.endY += 1
-//            }
-//        }
-        // Do any additional setup after loading the view, typically from a nib.
-        let sinView = SinView(frame: CGRect(x: 0, y: 0, width: view.width, height: 100))
-        view.addSubview(sinView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +42,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
         
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let titles = ["1","2","3"]
+        let alert = WXActionSheet(titles: titles, cancelTitle: "取消") { (btn) in
+            print(btn.tag)
+            ShowMessageTool.shareInstance().showTextMessage(btn.title(for: .normal)!)
+        }
+        alert.show()
+    }
     func test() {
     }
 }
