@@ -13,7 +13,7 @@ open class WXActionSheet: UIView {
     let screenSize = UIScreen.main.bounds.size
     var btnClickBlock:((UIButton) -> ())?
     
-    public init(titles:[String], cancelTitle:String, didSelectedBlock:@escaping ((_ button:UIButton) -> ())) {
+    public init(titles:[String], cancelTitle:String?, didSelectedBlock:@escaping ((_ button:UIButton) -> ())) {
         super.init(frame:CGRect(origin: CGPoint.zero, size: screenSize))
         backgroundColor = UIColor(r: 46, g: 49, b: 50, a: 0)
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismiss))
@@ -25,7 +25,7 @@ open class WXActionSheet: UIView {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    func buildViews(titles:[String], cancelTitle:String, didSelectedBlock:@escaping ((_ button:UIButton) -> ())) {
+    func buildViews(titles:[String], cancelTitle:String?, didSelectedBlock:@escaping ((_ button:UIButton) -> ())) {
         btnClickBlock = {btn in
             didSelectedBlock(btn)
         }
@@ -38,7 +38,7 @@ open class WXActionSheet: UIView {
         for (i,title) in titles.enumerated() {
             let btn = UIButton(frame:CGRect(x: 0, y: btnHeight * i, width: Int(screenSize.width), height: btnHeight))
             btn.tag = i
-            btn.backgroundColor = UIColor(white: 1, alpha: 0.8)
+            btn.backgroundColor = UIColor(white: 1, alpha: 0.9)
             btn.setBackgroundImage(UIImage(from: UIColor(r: 235, g: 235, b: 235, a: 0.8)), for: .highlighted)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
             btn.setTitleColor(UIColor(r: 74, g: 83, b: 94, a: 1), for: .normal)
@@ -51,7 +51,7 @@ open class WXActionSheet: UIView {
         cancelBtn.backgroundColor = UIColor.white
         cancelBtn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         cancelBtn.setTitleColor(UIColor(r: 74, g: 83, b: 94, a: 1), for: .normal)
-        cancelBtn.setTitle(cancelTitle, for: .normal)
+        cancelBtn.setTitle(cancelTitle ?? "取消", for: .normal)
         cancelBtn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         containerView.addSubview(cancelBtn)
         
@@ -66,13 +66,14 @@ open class WXActionSheet: UIView {
         let window = UIApplication.shared.keyWindow
         window?.addSubview(self)
         UIView.animate(withDuration: 0.3) { 
-            self.backgroundColor = UIColor(r: 46, g: 49, b: 50, a: 0.4)
+            self.backgroundColor = UIColor(r: 46, g: 49, b: 50, a: 0.6)
         }
     }
     func dismiss() {
         removeFromSuperview()
     }
     func btnClick(btn:UIButton) {
+        dismiss()
         if btnClickBlock != nil {
             btnClickBlock!(btn)
         }

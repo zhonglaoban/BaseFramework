@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let titles = ["1","2","3"]
-        let alert = WXActionSheet(titles: titles, cancelTitle: "取消") { (btn) in
+        let alert = WXActionSheet(titles: titles, cancelTitle: nil) { (btn) in
             print(btn.tag)
             ShowMessageTool.shareInstance().showTextMessage(btn.title(for: .normal)!)
         }
