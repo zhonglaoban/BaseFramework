@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'BaseFramework'
-    s.version          = '0.2.0'
+    s.version          = '0.2.2'
     s.summary          = '常用的类'
 
     s.description      = <<-DESC
@@ -22,14 +22,6 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '8.0'
 
-    s.subspec 'CommonViews' do |commonViews|
-    commonViews.source_files = 'BaseFramework/CommonViews/**/*.{h,m,swift}'
-    commonViews.dependency 'SDWebImage'
-    commonViews.dependency 'BaseFramework/Extension'
-    commonViews.dependency 'BaseFramework/Tool'
-    commonViews.resource = 'BaseFramework/CommonViews/**/*.{xib,png,bundle}'
-    end
-
     s.subspec 'Extension' do |extension|
     extension.source_files = 'BaseFramework/Extension/**/*.{h,m,swift}'
     extension.public_header_files = 'BaseFramework/Extension/**/*.h'
@@ -38,6 +30,12 @@ Pod::Spec.new do |s|
     s.subspec 'Tool' do |tool|
     tool.source_files = 'BaseFramework/Tool/**/*.{h,m,swift}'
     tool.dependency 'BaseFramework/Extension'
+
+    end
+
+    s.subspec 'Views' do |views|
+    views.source_files = 'BaseFramework/Views/**/*.{h,m,swift}'
+    views.dependency 'BaseFramework/Extension'
 
     end
 

@@ -41,8 +41,9 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "baseCell", for: indexPath)
 
-        cell.showaBadge("2")
-        cell.showSeperateLine(lineFrame: CGRect(x: 0, y: 20, width: 375, height: 0.5))
+//        cell.showaBadge("2")
+//        cell.showSeperateLine(lineFrame: CGRect(x: 0, y: 20, width: 375, height: 0.5))
+        
         return cell
     }
     

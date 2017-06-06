@@ -70,7 +70,7 @@ extension UIView {
         let radius = max(xCenter, yCenter)
         let lineW = min(xCenter, yCenter)
 
-        let circlePath = UIBezierPath(arcCenter: center, radius: radius + lineW * 0.5, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: center, radius: radius + lineW * 0.5, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
         maskLayer.lineWidth = lineW
         maskLayer.strokeColor = UIColor.white.cgColor
         maskLayer.fillColor = nil

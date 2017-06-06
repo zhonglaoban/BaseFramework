@@ -16,7 +16,15 @@ open class BaseModel: NSObject {
         let propties = Mirror(reflecting: self)
         for child in propties.children {
             // 使用 KVC 设置数值
-            if dict[child.0!] != nil {
+            if dict[child.0!] == nil {
+                
+            }else if dict[child.0!] is NSNull {
+                setValue(nil, forKeyPath: child.0!)
+            }else if dict[child.0!] is NSArray {
+                setValue(nil, forKeyPath: child.0!)
+            }else if dict[child.0!] is NSDictionary {
+                setValue(nil, forKeyPath: child.0!)
+            }else {
                 // 在 swift 中，如果在 构造函数中使用 KVC，需要先 super.init，确保对象被实例化
                 setValue(dict[child.0!], forKeyPath: child.0!)
             }
